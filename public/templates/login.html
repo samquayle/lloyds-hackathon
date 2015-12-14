@@ -1,0 +1,16 @@
+
+<p>{{ message }}</p>
+
+<h1>Login</h1>
+
+<form>
+  <div class="field">
+    <label>Email address</label>
+    <input type="text" ng-model="formData.username">
+  </div>
+  <div class="field">
+    <label>Password</label>
+    <input type="password" ng-model="formData.password">
+  </div>
+  <button type="submit" ng-click="login()">Login</button>
+</form>

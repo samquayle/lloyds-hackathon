@@ -1,0 +1,31 @@
+<p>{{ message }}</p>
+<a href="#" ng-click="logout">Logout</a>
+
+
+<h1 ng-if="view === 'add'">Add car</h1>
+<h1 ng-if="view === 'edit'">Something{{formData.make}} {{formData.model}} {{formData.year}}</h1>
+
+<form>
+  <div class="field">
+    <label>Make</label>
+    <input type="text" ng-model="formData.make">
+  </div>
+
+  {{ formData }}
+
+  <div class="field">
+    <label>Model</label>
+    <input type="text" ng-model="formData.model">
+  </div>
+
+  <div class="field">
+    <label>Year</label>
+    <input type="text" ng-model="formData.year">
+  </div>
+
+  <button ng-if="view === 'add'" type="submit" ng-click="createcar()">Save</button>
+  <a ng-if="view === 'add'" ui-sref="home">Cancel</a>
+
+  <button ng-if="view === 'edit'" type="submit" ng-click="updatecar()">Save</button>
+  <button ng-if="view === 'edit'" type="submit" ng-click="deletecar()">Delete</button>
+</form>

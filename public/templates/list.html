@@ -1,0 +1,14 @@
+  <p>{{ message }}</p>
+  <a href="#" ng-click="logout()">Logout</a>
+
+  <h1>Cars ({{ cars.length }})</h1>
+
+  <ul>
+    <li ng-repeat="car in cars | orderBy:'make' ">
+        {{ car }}
+        <a href="#" ui-sref="edit({ id:car._id })">{{ car.make }} {{ car.model }} {{ car.model }}</a>
+        <a href="#" ng-click="deletecar(car._id)">Delete</a>
+    </li>
+  </ul>
+
+  <a ui-sref="add">Add</a>
